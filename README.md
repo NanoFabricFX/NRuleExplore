@@ -1,2 +1,2 @@
 # NRuleExplore
-##Exploring NRule by using simple rules
+## Exploring NRule by using simple rules

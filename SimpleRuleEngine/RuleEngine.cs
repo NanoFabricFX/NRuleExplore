@@ -5,12 +5,14 @@ using NRules;
 using NRules.Fluent;
 using NRules.Fluent.Dsl;
 
+
 namespace SimpleRuleEngine
 {
     public class RuleEngine : IRuleEngine
     {
         private ISession _session;
-        public RuleEngine()
+        
+        public RuleEngine(/*ILogger logger*/)
         {
         }
 
@@ -18,19 +20,25 @@ namespace SimpleRuleEngine
         {
             var rulesRepo = new RuleRepository();
 
-            Assembly targetassembly = RuleEngineHelper.GetRuleAssembly(typeof(Rule));
+            try
+            {
 
-            rulesRepo.Load(x => x.From(targetassembly));
+                Assembly targetassembly = RuleEngineHelper.GetRuleAssembly(typeof(Rule));
 
-            var factory = rulesRepo.Compile();
-            _session = factory.CreateSession();
+                rulesRepo.Load(x => x.From(targetassembly));
 
-            //add your custom invokers here
-
+                var factory = rulesRepo.Compile();
+                _session = factory.CreateSession();
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex.Message);
+            }
         }
 
         public void StartEngine(Action<ISession> bootstrapAction)  
         {
+            //add your custom invokers here
             bootstrapAction.Invoke(_session);
             _session.Fire();
         }

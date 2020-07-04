@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Linq;
+using Microsoft.Extensions.Logging;
 using NRuleExplore.Domain;
 using NRules.Fluent.Dsl;
 
@@ -7,8 +8,11 @@ namespace NRuleExplore.Rules
 {
     public class PriceForBRule : Rule
     {
-        public PriceForBRule()
+        //private readonly ILogger<PriceForBRule> _logger;
+
+        public PriceForBRule(/*ILogger<PriceForBRule> logger*/)
         {
+            //_logger = logger;
         }
 
         public override void Define()
@@ -25,6 +29,7 @@ namespace NRuleExplore.Rules
 
         private void ApplyPriceForRuleB(Orders orders)
         {
+            //_logger.LogInformation($"{this.GetType().Name} is applied");
             foreach (var item in orders.OrderItems)
             {
                 var skuItem = orders.GetSku(item._skuId);

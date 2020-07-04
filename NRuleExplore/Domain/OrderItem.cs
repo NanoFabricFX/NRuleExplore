@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 
-namespace NRuleExplore
+namespace NRuleExplore.Domain
 {
     public class OrderItem
     {

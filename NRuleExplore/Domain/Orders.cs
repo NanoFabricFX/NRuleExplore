@@ -1,8 +1,9 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using NRuleExplore.Domain.Helpers;
 
-namespace NRuleExplore
+namespace NRuleExplore.Domain
 {
     public class Orders
     {

@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Linq;
+using NRuleExplore.Domain;
 using NRules.Fluent.Dsl;
 
 namespace NRuleExplore.Rules

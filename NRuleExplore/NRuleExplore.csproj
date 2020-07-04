@@ -9,6 +9,11 @@
     <PackageReference Include="NRules" Version="0.9.0" />
   </ItemGroup>
   <ItemGroup>
+    <Folder Include="Domain\" />
+    <Folder Include="Domain\Helpers\" />
     <Folder Include="Rules\" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\SimpleRuleEngine\SimpleRuleEngine.csproj" />
   </ItemGroup>
 </Project>

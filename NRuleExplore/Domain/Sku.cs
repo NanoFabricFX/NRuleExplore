@@ -1,5 +1,5 @@
 ﻿using System;
-namespace NRuleExplore
+namespace NRuleExplore.Domain
 {
     public class Sku
     {

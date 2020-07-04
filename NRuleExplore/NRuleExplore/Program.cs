@@ -11,18 +11,25 @@ namespace NRuleExplore
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("Hello World!");
-
             var rulesRepo = new RuleRepository();
             rulesRepo.Load(x => x.From(Assembly.GetExecutingAssembly()));
 
             var factory = rulesRepo.Compile();
             var session = factory.CreateSession();
 
-            var order = new Orders { items = { new OrderItem("A",5), new OrderItem("B", 2)} };
+            var orderItems = new List<OrderItem> {
+                new OrderItem("A",5),
+                new OrderItem("B", 2),
+                new OrderItem("C",1),
+                new OrderItem("D",1)
+            };
+
+            var order = new Orders(orderItems);
 
             session.Insert(order);
             session.Fire();
+
+            Console.WriteLine($"Calculated order price is: {order.OrderPrice}");
 
             Console.ReadLine();
         }

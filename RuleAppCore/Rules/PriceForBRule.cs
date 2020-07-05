@@ -1,10 +1,10 @@
 ﻿using System;
 using System.Linq;
 using Microsoft.Extensions.Logging;
-using NRuleExplore.Domain;
+using RuleAppCore.Domain;
 using NRules.Fluent.Dsl;
 
-namespace NRuleExplore.Rules
+namespace RuleAppCore.Rules
 {
     public class PriceForBRule : Rule
     {

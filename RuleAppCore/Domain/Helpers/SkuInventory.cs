@@ -1,8 +1,8 @@
 ﻿using System;
 using System.Collections.Generic;
-using NRuleExplore.Domain;
+using RuleAppCore.Domain;
 
-namespace NRuleExplore.Domain.Helpers
+namespace RuleAppCore.Domain.Helpers
 {
     public class SkuInventory
     {

@@ -1,7 +1,7 @@
 ﻿using System;
-using NRuleExplore.Domain;
+using RuleAppCore.Domain;
 
-namespace NRuleExplore
+namespace RuleAppCore
 {
     public interface IRuleService
     {

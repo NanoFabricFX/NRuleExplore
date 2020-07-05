@@ -1,9 +1,9 @@
 ﻿using System;
 using Microsoft.Extensions.Logging;
-using NRuleExplore.Domain;
+using RuleAppCore.Domain;
 using SimpleRuleEngine;
 
-namespace NRuleExplore
+namespace RuleAppCore
 {
     public class MyRuleService : IRuleService
     {

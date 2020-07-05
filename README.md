@@ -19,7 +19,7 @@ We are implementing following problem statement by implementing a simple rule en
 
 ![alt text](./media/UmlDiagram.PNG)
 
-## Scope of future developments ##
+## Scope for future developments ##
 
 - More elaborate test cases
 - Better naming and access controls

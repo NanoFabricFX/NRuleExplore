@@ -20,7 +20,7 @@ namespace RuleAppCore.Rules
             int total = 0;
 
             When()
-                .Match<Orders>(() => orders, o => o.OrderItems.Exists(s => s._skuId == "A" && s._quantity > 3))
+                .Match<Orders>(() => orders, o => o.OrderItems.Exists(s => s._skuId == "A" && s._quantity >= 3))
                 .Let(() => total, () => orders.OrderItems.FindAll(s => s._skuId == "A").Count);
 
             Then()

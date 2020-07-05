@@ -37,6 +37,8 @@ namespace NRuleExplore
                 var orders = new Orders(orderItems);
 
                 myRuleSvc.RunRuleService(orders);
+                var promotionalPrice = myRuleSvc.GenerateInvoice(orders);
+                Console.WriteLine($"Invoice value after applying promotions - {promotionalPrice}");
             }
 
             Console.ReadLine();

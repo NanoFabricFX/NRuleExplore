@@ -16,6 +16,8 @@ namespace RuleAppCore
             _ruleEngine = ruleEngine;
         }
 
+        public int GenerateInvoice(Orders orders) => orders.OrderPrice;
+
         public void RunRuleService(Orders orders)
         {
             try
@@ -28,12 +30,13 @@ namespace RuleAppCore
                 _ruleEngine.StartEngine(s => s.Insert(orders));
 
                 _logger.LogInformation($"Rules are run on Orders and new promotional price is {orders.OrderPrice}");
-                Console.WriteLine($"Rules are run on Orders and new promotional price is {orders.OrderPrice}");
             }
             catch (Exception ex)
             {
                 _logger.LogError(ex.Message);
             }
         }
+
+
     }
 }

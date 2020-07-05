@@ -17,7 +17,7 @@ We are implementing following problem statement by implementing a simple rule en
 
 ## Architecture ##
 
-![alt text](./media/UmlDiagram.png)
+![alt text](./media/UmlDiagram.PNG)
 
 ## Scope of future developments ##
 
